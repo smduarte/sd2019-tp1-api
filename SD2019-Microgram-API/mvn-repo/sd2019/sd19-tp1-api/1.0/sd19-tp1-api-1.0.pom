@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>sd2019</groupId>
 	<artifactId>sd19-tp1-api</artifactId>
-	<version>1.0.0</version>
+	<version>1.0</version>
 	<properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	</properties>
@@ -23,12 +23,14 @@
 		</plugins>
 
 	</build>
+	
 	<distributionManagement>
         <repository>
             <id>sd19-tp1-api</id>
             <url>file://${project.basedir}/mvn-repo</url>
         </repository>
     </distributionManagement>
+    
 	<dependencies>
 
 		<dependency>
