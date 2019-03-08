@@ -36,37 +36,36 @@ public interface Posts {
 	Result<Void> deletePost( String postId );
 	
 	/**
+	 * Adds or removes a like to a post
 	 * 
-	 * 
-	 * @param postId
-	 * @param userId
-	 * @param isLiked
-	 * @return
+	 * @param postId the identifier of the post
+	 * @param userId the identifier of the user
+	 * @param isLiked a flag with true to add a like, false to remove the like
+	 * @return (OK,) if the like was added/removed; NOT_FOUND if either the post or the like being removed does not exist, 
+	 * CONFLICT if the like already exists.
 	 */
 	Result<Void> like(String postId, String userId, boolean isLiked);
 
 	/**
-	 * 
-	 * @param postId
-	 * @param userId
-	 * @return
+	 * Determines if a post is liked by a user.
+	 * @param postId the identifier of the post
+	 * @param userId the identifier of the user
+	 * @return (OK,Boolean), or NOT_FOUND if there is no Post with the given postId
 	 */
 	Result<Boolean> isLiked(String postId, String userId);
 		
 	/**
-	 * 
-	 * @param userId
-	 * @return
+	 * Retrieves the list of post identifiers of the posts published by the given user profile
+	 * @param userId the user profile that owns the requested posts
+	 * @return (OK, List<PostId>|empty list) or NOT_FOUND if the user profile is not known
 	 */
 	Result<List<String>> getPosts( String userId);
 	
 	
 	/**
-	 * Returns the feed of the profile. The feed is the list of Posts made by those followed by the given profile.
-	 * @param userId profile of the requested feed
-	 * @return (OK,List<String>), NOT_FOUND if the profile does not exist
+	 * Returns the feed of the user profile. The feed is the list of Posts made by user profiles followed by the userId profile.
+	 * @param userId user profile of the requested feed
+	 * @return (OK,List<PostId>|empty list), NOT_FOUND if the user profile is not known
 	 */
 	Result<List<String>> getFeed( String userId);
-
-
 }

@@ -6,6 +6,7 @@
 	<artifactId>sd19-tp1-api</artifactId>
 	<version>1.0</version>
 	<properties>
+	<googledrive>/Volumes/GoogleDrive/My Drive/CAMPUS-ROOT/SD2019/jupyter/public-html</googledrive>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	</properties>
   
@@ -27,7 +28,7 @@
 	<distributionManagement>
         <repository>
             <id>sd19-tp1-api</id>
-            <url>file://${project.basedir}/mvn-repo</url>
+            <url>file://${googledrive}/mvn-repo</url>
         </repository>
     </distributionManagement>
     
